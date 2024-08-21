@@ -1,6 +1,5 @@
 package com.example.school.Service;
 
-import com.example.school.Model.Subject;
 import com.example.school.Model.Teacher;
 import com.example.school.Repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +23,10 @@ public class TeacherService {
 
     public Teacher getTeacherById(Long id) {
         return teacherRepository.findById(id).get();
+    }
+
+    public List<Teacher> getTeacherByName(String keyword){
+        return teacherRepository.searchByKeyword(keyword);
     }
 
 }

@@ -19,6 +19,11 @@ public class TeacherController {
         return teacherService.getTeachers();
     }
 
+    @GetMapping("/search/{keyword}")
+    public List<Teacher> getTeacherByName(@PathVariable String keyword) {
+        return teacherService.getTeacherByName(keyword);
+    }
+
     @PostMapping
     Teacher createTeacher(@RequestBody Teacher teacher){
         return teacherService.createTeacher(teacher);
